@@ -7,9 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { boldCommand, codeCommand, italicCommand } from "../src";
 import { ToolbarButton } from "./toolbar-button";
 
-export type DemoProps = {};
-
-export const Demo: React.FC<DemoProps> = () => {
+export const Demo: React.FC = () => {
   const { ref, commandController } = useTextAreaMarkdownEditor({
     commandMap: {
       bold: boldCommand,
