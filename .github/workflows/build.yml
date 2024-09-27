@@ -29,5 +29,5 @@ jobs:
         with:
           source-directory: "dist"
           destination-github-username: "BastKakrolot"
-          destination-repository-name: "react-headless-editor-docs"
+          destination-repository-name: "react-hl-mde-docs"
           target-branch: master
