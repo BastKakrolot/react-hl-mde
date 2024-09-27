@@ -1,0 +1,69 @@
+{
+  "name": "react-hl-mde",
+  "version": "0.0.1",
+  "description": "React Headless Markdown Editor",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "test": "jest",
+    "dev": "vite",
+    "lint": "pretty-quick",
+    "tsc": "tsc",
+    "build": "rollup -c",
+    "typecheck": "tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BastKakrolot/react-hl-mde.git"
+  },
+  "keywords": [
+    "react",
+    "component",
+    "markdown",
+    "editor",
+    "text-editor",
+    "markdown-editor",
+    "headless"
+  ],
+  "author": "BastKakrolot",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BastKakrolot/react-hl-mde.git/issues"
+  },
+  "devDependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
+    "@rollup/plugin-commonjs": "^22.0.0",
+    "@rollup/plugin-node-resolve": "^13.2.1",
+    "@rollup/plugin-typescript": "^8.3.2",
+    "@types/jest": "^24.0.23",
+    "@types/range-parser": "^1.2.2",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@types/showdown": "^1.7.2",
+    "@vitejs/plugin-react": "^1.3.0",
+    "add": "^2.0.6",
+    "cross-env": "^6.0.3",
+    "framer-motion": "^11.8.0",
+    "jest": "^24.9.0",
+    "merge2": "^1.2.1",
+    "prettier": "^3.3.3",
+    "pretty-quick": "^2.0.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "rollup": "^2.71.1",
+    "rollup-plugin-dts": "^4.2.1",
+    "showdown": "^1.8.6",
+    "ts-node": "^8.5.4",
+    "tslib": "^2.4.0",
+    "typescript": "^4.2.4",
+    "vite": "^2.9.5",
+    "yarn": "^1.22.18"
+  },
+  "homepage": "https://github.com/BastKakrolot/react-hl-mde.git#readme"
+}
