@@ -1,69 +1,34 @@
 import * as React from "react";
-import {
-  faBold,
-  faItalic,
-  faCode,
-  faHeading
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  boldCommand,
-  codeCommand,
-  italicCommand,
-  headingLevel1Command,
-  useTextAreaMarkdownEditor
-} from "../../src";
-import { Flex } from "antd";
+import BaseLayout from "../layout/base-layout";
+import useTAMDE, { CommandsKeys } from "../hooks/use-textarea-mde";
+import { IconMap } from "../constants";
 import { IconButton, TextField } from "@mui/material";
+
 export const MUIDemo: React.FC = () => {
-  const { ref, commandController } = useTextAreaMarkdownEditor({
-    commandMap: {
-      bold: boldCommand,
-      italic: italicCommand,
-      code: codeCommand,
-      headingLevel1: headingLevel1Command
-    }
-  });
-  console.log(ref);
+  const { ref, commandController } = useTAMDE();
+  const toolbar = React.useMemo<JSX.Element>(() => {
+    return (
+      <>
+        {CommandsKeys.map(key => {
+          return (
+            <IconButton
+              color="primary"
+              key={key}
+              onClick={() => commandController.executeCommand(key)}
+            >
+              {IconMap[key]}
+            </IconButton>
+          );
+        })}
+      </>
+    );
+  }, []);
 
   return (
-    <div style={{ padding: 10 }}>
-      <Flex vertical gap={10}>
-        <strong>MUI</strong>
-        <Flex gap={5}>
-          <IconButton
-            color="primary"
-            onClick={async () => {
-              await commandController.executeCommand("bold");
-            }}
-          >
-            <FontAwesomeIcon icon={faBold} />
-          </IconButton>
-          <IconButton
-            color="primary"
-            onClick={async () => {
-              await commandController.executeCommand("italic");
-            }}
-          >
-            <FontAwesomeIcon icon={faItalic} />
-          </IconButton>
-          <IconButton
-            color="primary"
-            onClick={async () => {
-              await commandController.executeCommand("code");
-            }}
-          >
-            <FontAwesomeIcon icon={faCode} />
-          </IconButton>
-          <IconButton
-            color="primary"
-            onClick={async () => {
-              await commandController.executeCommand("headingLevel1");
-            }}
-          >
-            <FontAwesomeIcon icon={faHeading} />
-          </IconButton>
-        </Flex>
+    <BaseLayout
+      name="MUI"
+      toolbar={toolbar}
+      textarea={
         <TextField
           label="Markdown Editor"
           multiline
@@ -74,8 +39,8 @@ export const MUIDemo: React.FC = () => {
           }}
           placeholder="I'm a markdown editor"
         />
-      </Flex>
-    </div>
+      }
+    />
   );
 };
 
